@@ -7,18 +7,18 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label x:Name="Title" Content="ИМТ Калькулятор" HorizontalAlignment="Center" Margin="10,25,0,0" VerticalAlignment="Top" Height="100" FontSize="29" Width="600" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="txtHeight" Margin="282,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" FontSize="22" HorizontalAlignment="Left" Width="281" PreviewTextInput="txtHeight_PreviewTextInput" Text="0"/>
-        <TextBox x:Name="txtWeight" Margin="282,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" FontSize="22" HorizontalAlignment="Left" Width="281" PreviewTextInput="txtWeight_PreviewTextInput" Text="0"/>
+        <TextBox x:Name="TxtHeight" Margin="282,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" FontSize="22" HorizontalAlignment="Left" Width="281" PreviewTextInput="txtHeight_PreviewTextInput" Text="0"/>
+        <TextBox x:Name="TxtWeight" Margin="282,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" FontSize="22" HorizontalAlignment="Left" Width="281" PreviewTextInput="txtWeight_PreviewTextInput" Text="0"/>
         <Label Content="Рост" HorizontalAlignment="Left" Margin="182,93,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Label Content="Вес" HorizontalAlignment="Left" Margin="182,175,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Label Content="см" HorizontalAlignment="Left" Margin="563,89,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Label Content="кг" HorizontalAlignment="Left" Margin="563,173,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <Button x:Name="btnCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="284,265,0,0" VerticalAlignment="Top" Height="40" Width="130" FontSize="18" Click="btnCalculate_Click" Background="FloralWhite"/>
-        <Button x:Name="btnClear" Content="Удалить" HorizontalAlignment="Left" Margin="432,265,0,0" VerticalAlignment="Top" Height="40" Width="130" FontSize="18" Click="btnClear_Click" Background="#FFFF8080"/>
+        <Button x:Name="BtnCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="284,265,0,0" VerticalAlignment="Top" Height="40" Width="130" FontSize="18" Click="btnCalculate_Click" Background="FloralWhite"/>
+        <Button x:Name="BtnClear" Content="Удалить" HorizontalAlignment="Left" Margin="432,265,0,0" VerticalAlignment="Top" Height="40" Width="130" FontSize="18" Click="btnClear_Click" Background="#FFFF8080"/>
         <Label Content="ИМТ:" HorizontalAlignment="Left" Margin="187,342,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label x:Name="txtBmi" Content="" HorizontalAlignment="Left" Margin="249,342,0,0" VerticalAlignment="Top" FontSize="22" HorizontalContentAlignment="Center" Foreground="#FF538448"/>
+        <Label x:Name="TxtBmi" Content="" HorizontalAlignment="Left" Margin="249,342,0,0" VerticalAlignment="Top" FontSize="22" HorizontalContentAlignment="Center" Foreground="#FF538448"/>
         <Label Content="Статус:" HorizontalAlignment="Left" Margin="433,342,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <Label x:Name="txtStatus" Content="" HorizontalAlignment="Left" Margin="512,342,0,0" VerticalAlignment="Top" FontSize="22" HorizontalContentAlignment="Center" Foreground="#FF8E1C7C"/>
+        <Label x:Name="TxtStatus" Content="" HorizontalAlignment="Left" Margin="512,342,0,0" VerticalAlignment="Top" FontSize="22" HorizontalContentAlignment="Center" Foreground="#FF8E1C7C"/>
 
     </Grid>
 </Window>
