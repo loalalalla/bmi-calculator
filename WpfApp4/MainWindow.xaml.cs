@@ -54,10 +54,10 @@ namespace fkfk
         {
             var bmiStatusRanges = new (float, float, string)[]
             {
-                (float.MinValue, 18.5f, "Недостаточный вес"),
-                (18.5f, 24.9f, "Нормальный вес"),
-                (24.9f, 29.9f, "Избыточный вес"),
-                (29.9f, float.MaxValue, "Ожирение"),
+                  (float.MinValue, 18.5f, "Недостаточный вес"),
+                  (18.5f, 24.9f, "Нормальный вес"),
+                  (25.0f, 29.9f, "Избыточный вес"),
+                  (30.0f, float.MaxValue, "Ожирение"),
             };
             foreach (var (min, max, status) in bmiStatusRanges)
             {
