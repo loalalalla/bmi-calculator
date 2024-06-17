@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace WpfApp8;
+namespace fkfk;
 
 /// <summary>
 /// Interaction logic for App.xaml
