@@ -1,6 +1,8 @@
 using System.Windows;
 using System.Windows.Input;
-namespace fkfk
+using System.Windows.Media;
+
+namespace _4040
 {
     public partial class MainWindow : Window
     {
@@ -35,13 +37,13 @@ namespace fkfk
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
-            if (float.TryParse(txtWeight.Text, out weight) && float.TryParse(txtHeight.Text, out height))
+            if (float.TryParse(TxtWeight.Text, out weight) && float.TryParse(TxtHeight.Text, out height))
             {
                 float bmi = CalculateBMI(weight, height);
-                txtBmi.Content = bmi;
+                TxtBmi.Content = bmi;
                 
-                string status = GetBMIStatus(bmi);
-                txtStatus.Content = status;
+                string status = GetBmiStatus(bmi);
+                TxtStatus.Content = status;
             }
         }
 
@@ -50,40 +52,36 @@ namespace fkfk
             return MathF.Round(weight / MathF.Pow(height / 100, 2), 2);
         }
 
-         private string GetBmiStatus(float bmi)
+        private string GetBmiStatus(float bmi)
         {
-            (float MinValue, float, string, Brush)[] bmiStatusRanges = new (float MinValue, float, string, Brush)[]
+            (float MinValue, float MaxValue, string Status, Brush Foreground)[] bmiStatusRanges = new (float MinValue, float MaxValue, string Status, Brush Foreground)[]
             {
-                (float.MinValue, 18.5f, "Недостаточный вес \n Имеется риск угрозы здоровья",
-                    Foreground = Brushes.LightGreen),
-                (18.5f, 24.9f, "Нормальный вес", Foreground = Brushes.Chartreuse),
-                (25.0f, 27.9f, "Избыточный вес \n Желательно уменьшение массы тела", Foreground = Brushes.Orange),
-                (28.0f, 30.9f, "Ожирение первой степени \n Желательно уменьшение массы тела",
-                    Foreground = Brushes.IndianRed),
-                (31.0f, 35.9f, "Ожирение второй степени \n Крайне желательно уменьшение массы тела",
-                    Foreground = Brushes.OrangeRed),
-                (36.0f, 40.9f, "Ожирение третьей степени \n Крайне желательно уменьшение массы тела",
-                    Foreground = Brushes.Red),
-                (41.0f, float.MaxValue,
-                    "Ожирение четвертой степени \n Необходимы срочные меры по уменьшению массы тела",
-                    Foreground = Brushes.DarkRed),
+                (float.MinValue, 18.5f, "Недостаточный вес \n Имеется риск угрозы здоровья", Brushes.GreenYellow),
+                (18.5f, 24.9f, "Нормальный вес", Brushes.Green),
+                (25.0f, 27.9f, "Избыточный вес \n Желательно уменьшение массы тела", Brushes.Orange),
+                (28.0f, 30.9f, "Ожирение первой степени \n Желательно уменьшение массы тела", Brushes.IndianRed),
+                (31.0f, 35.9f, "Ожирение второй степени \n Крайне желательно уменьшение массы тела", Brushes.OrangeRed),
+                (36.0f, 40.9f, "Ожирение третьей степени \n Крайне желательно уменьшение массы тела", Brushes.Red),
+                (41.0f, float.MaxValue, "Ожирение четвертой степени \n Необходимы срочные меры по уменьшению массы тела", Brushes.DarkRed),
             };
-            foreach (var (min, max, status) in bmiStatusRanges)
+
+            foreach (var (min, max, status, foreground) in bmiStatusRanges)
             {
                 if (bmi >= min && bmi < max)
                 {
+                    TxtStatus.Foreground = foreground;
                     return status;
                 }
             }
+
             return "Неизвестно";
         }
-
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            txtHeight.Text = "0";
-            txtWeight.Text = "0";
-            txtBmi.Content = string.Empty;
-            txtStatus.Content = string.Empty;
+            TxtHeight.Text = "0";
+            TxtWeight.Text = "0";
+            TxtBmi.Content = string.Empty;
+            TxtStatus.Content = string.Empty;
         }
     }
 }
